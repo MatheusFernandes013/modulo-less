@@ -1,3 +1,5 @@
+@import "mapas.less";
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-    background-color: #f5f6fa;
+    background-color: #colors[backgroundColor];
 }
 
 li {
@@ -19,37 +21,40 @@ li {
     margin: 0 auto;
 }
 
+
 header {
-    background-color: #182C61;
+    background-color: #colors[headerBackgroundColor];
     position: sticky;
     top: 0;
     left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 0;
-}
 
 .menu {
     display: flex;
-}
 
-.menu li {
-    font-weight: bold;
-    margin-left: 24px;
-}
+    li {
+        font-weight: bold;
+        margin-left: 24px;
 
-.menu li a {
-    color: #fff;
-    text-decoration: none;
+        a {
+            color: #colors[colorLink];
+            text-decoration: none;
+        }
+    }
 }
 
 section {
     padding: 56px 0;
 }
+
 
 .products {
     margin-top: 40px;
@@ -60,24 +65,26 @@ section {
     width: 100%;
 }
 
-.product-item img {
-    width: 100%;
-    border-radius: 16px;
+.product-item {
+    img {
+        width: 100%;
+        border-radius: 16px;
+    }
 }
 
 .product-button {
     display: block;
-    background-color: #44bd32;
-    color: #fff;
+    background-color: #colors[colorButton];
+    color: #colors[colorLink];
     text-align: center;
     padding: 8px 0;
     border-radius: 8px;
     margin-top: 8px;
     text-decoration: none;
-}
 
-.product-button:hover {
-    background-color: #4cd137;
+    &:hover {
+        background-color: #colors[colorButtonLigther];
+    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -96,7 +103,7 @@ section {
         display: block;
     }
 
-    .product-item  {
+    .product-item {
         margin-bottom: 32px;
     }
 }
